@@ -3,10 +3,13 @@ class User < ApplicationRecord
 
   validates :name,
     presence: true,
-    length: {maximum: 50}
+    length: { maximum: 50 }
   validates :email,
     presence: true,
     uniqueness: { case_sensitive: false },
-    length: {maximum: 255},
+    length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX }
+
+  before_save { self.email = email.downcase }
+
 end
