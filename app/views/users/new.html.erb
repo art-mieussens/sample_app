@@ -2,7 +2,8 @@
 <h1>Sign up</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= render 'shared_user_form', target_url: signup_path,
-                       btn_text: 'create my account' %>
+    <%= render 'form', target_url: signup_path,
+                       btn_text: 'create my account',
+                       object: @user %>
   </div>
 </div>
